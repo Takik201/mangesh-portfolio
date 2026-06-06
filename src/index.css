@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f6fbff;
+  background: #05070d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(30, 227, 165, 0.14), transparent 34rem),
+    radial-gradient(circle at 85% 10%, rgba(77, 216, 255, 0.12), transparent 30rem),
+    linear-gradient(180deg, #06111f 0%, #05070d 48%, #07101a 100%);
+}
+
+body.nav-locked {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  color: #05120f;
+  background: #1ee3a5;
+}
+
+.mesh-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, black, transparent 72%);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  backdrop-filter: blur(22px);
+}
+
+.quiet-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 16, 28, 0.72);
+}
+
+.section-shell {
+  width: min(100% - 32px, 1160px);
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: 88px;
+}
+
+.section-kicker {
+  color: #1ee3a5;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 0.7rem;
+  max-width: 780px;
+  color: #f6fbff;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.section-copy {
+  max-width: 760px;
+  color: #aebbd0;
+  font-size: 1.02rem;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.reveal-card {
+  transform: translateY(0);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.reveal-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(30, 227, 165, 0.42);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 2px;
+  background: linear-gradient(180deg, #1ee3a5, #4dd8ff, #f4c95d);
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .section-pad {
+    padding-block: 64px;
+  }
+}
